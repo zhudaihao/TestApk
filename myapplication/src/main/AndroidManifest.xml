@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gemini.cloud.app.myapplication">
+
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".TestActivity" android:launchMode="singleTask" />
+        <activity android:name=".Test2Activity" android:launchMode="singleTop"/>
+
+        <service android:name=".MyService" />
+        <service android:name=".AlarmService" />
+
+
+        <service android:name=".KeepLifeService" android:persistent="true"/>
+        <service android:name=".CheckService" />
+
+        <receiver android:name=".AlarmReceiver" />
+        <receiver android:name=".TestBrodCastReceiver">
+
+            <intent-filter>
+                <action android:name="android.intent.action.DREAMING_STOPPED"/>
+                <action android:name="android.intent.action.MANAGE_PACKAGE_STORAGE"/>
+                <action android:name="android.intent.action.USER_STOPPED"/>
+
+
+
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
